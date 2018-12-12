@@ -1,11 +1,8 @@
-var express = require('express');
-var app = express();
-var port = process.env.PORT || 80;
- 
- app.get('/', function(req, res){
-	res.send("Hell Wolrd");
- 	res.end("Done :)");
- 	console.log("Server started successfully");
- })
+var http = require('http');
+var port = process.env.PORT || 8080;
 
- app.listen(port);
+http.createServer(function(req, res){
+	console.log("Hurray!! Server Started");
+	res.write("Hello World");
+	res.end("Done");
+}).listen(port);
